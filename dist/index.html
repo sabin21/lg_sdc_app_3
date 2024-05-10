@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Draft</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+<link rel="icon" href="favicon.png"><link href="./css/index.build.css" rel="stylesheet"></head>
+<body>
+    <div class="w-full flex guide-doc">
+        <header class="side-header fixed h-full border-r">
+            <div class="w-full px-7 py-8 border-b">
+                <img src="./img/index/logo.png" >
+            </div>
+            <div class="w-full pl-2" id="accordian">
+                <ul class="w-full">
+                    <!--
+                    <li><a href="home.html" target="index-iframe">Home</a></li>
+                    <li>   
+                        <a href="concept.html" target="index-iframe">Design Concept</a>
+                    </li>
+                    <li>
+                        <a href="draft_a_1.html" target="_blank">Type A</a>
+                    </li>
+                    <li>
+                        <a href="draft_b_1.html" target="_blank">Type B</a>
+                    </li>
+                    <li>
+                        <a href="draft_c_1.html" target="_blank">Type C</a>
+                    </li>
+                    <li>
+                        <a href="draft_d_1.html" target="_blank">Type D</a>
+                    </li>
+
+                    <li><a href="javascript:void(0);">Foundation</a>
+                        <ul>
+                            <li> <a href="guide_color.html" target="index-iframe">Color</a></li>
+                            <li> <a href="guide_typo.html" target="index-iframe">Typography</a></li>
+                            <li> <a href="guide_spacing.html" target="index-iframe">Spacing</a></li>
+                            <li> <a href="guide_layout.html" target="index-iframe">Layout</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">Components</a>
+                        <ul>
+                            <li> <a href="component_1.html" target="index-iframe">Components-1</a></li>
+                            <li> <a href="cards_1.html" target="index-iframe">Cards-1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">Basic Patterns</a>
+                        <ul>
+                            <li> <a href="carousel_1.html" target="index-iframe">Carousel-1</a></li>
+                            <li> <a href="javascript:void(0);" target="index-iframe" class="disable">Carousel-2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">Scroll Action</a>
+                        <ul>
+                            <li> <a href="scroll_action_01.html" target="index-iframe">Sample-01</a></li>
+                            
+                        </ul>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </header>
+        <main class="iframe-main">
+            <iframe src="draft_list.html" frameborder="0" name="index-iframe"></iframe>
+        </main>
+    </div>
+
+    <!-- <script src="./js/jquery/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $("#accordian a").click(function() {
+        var link = $(this);
+        var closest_ul = link.closest("ul");
+        var parallel_active_links = closest_ul.find(".active")
+        var closest_li = link.closest("li");
+        var link_status = closest_li.hasClass("active");
+        var count = 0;
+
+        closest_ul.find("ul").slideUp(function() {
+            if (++count == closest_ul.find("ul").length){
+                parallel_active_links.removeClass("active");
+                parallel_active_links.children("ul").removeClass("show-dropdown");
+            }
+        });
+
+        if (!link_status) {
+            closest_li.children("ul").slideDown().addClass("show-dropdown");
+            closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
+            link.parent().addClass("active");
+        }
+    })
+});
+    </script> -->
+<script defer src="./js/index.bundle.js"></script></body>
+</html>

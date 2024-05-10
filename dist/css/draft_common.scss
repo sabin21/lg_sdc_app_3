@@ -1,0 +1,36 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+:root{
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+}
+
+body{
+  font-family: 'pretendard';
+}
+ul{
+  margin:0; padding:0;
+}
+.main{
+  position: relative; width:100%; 
+}
+
+.doc-wrap{
+  position: relative; margin: 0 auto; padding: 150px 0;
+  width:100%; max-width: 1400px; 
+  >.row{
+    width: 100%; padding: 24px 0; display: flex;
+    &.gap-4{
+      gap: 32px;
+    }
+  }
+}

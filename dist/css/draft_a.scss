@@ -1,0 +1,215 @@
+:root{
+  --border-radius-1: 24px;
+}
+body{
+  overflow-x: hidden;
+  &.scrollstop{
+    overflow-y: hidden;
+  }
+}
+.main{
+  position: relative; width:100%;
+}
+
+/*----------------*/
+
+.app-header{
+  position: fixed; z-index: 9000; width:100%; height: 80px; background-color: white;
+  display: flex; justify-content: center; align-items: center; transition: top 0.2s;
+  top:-80px; border-bottom:1px solid;
+  &.active{
+    top:0;
+  }
+  >.gnb-menu-wrap{
+    display: flex; gap: 24px;
+    >li{
+      padding: 12px 0;
+      >a{
+        font-size: 18px; font-weight: bold; color:var(--gray-800);
+        text-transform: uppercase; letter-spacing: -0.02em;
+      }
+    }
+  }
+}
+
+/*----------------*/
+.section {
+  position: relative; width:100%;
+  &.section-hero{ height:100vh; }
+}
+
+.hero-wrap{
+    width:100%; overflow: hidden; padding:32px 32px;
+    >.logo-round{
+      width:280px; position: absolute; left:32px; top:32px; z-index: 10;
+    }
+    >.inner-wrap{
+      width:100%; 
+      display: grid; grid-template-columns: 65% calc(35% - 24px);
+      grid-template-rows: repeat(2, 2fr); gap:24px;
+      >.canvas-hero{
+        position: relative; background-color: #1A1A29; overflow: hidden; border-radius: 24px;
+        width: 100%;  height:calc(100vh - 64px); grid-row: 1 / span 2;
+        display: flex; align-items: center;
+        &::before{
+          content:''; display: block; position: absolute;
+          width: 100%; height: 100%; top:0; left:0;
+          background-color: rgba(0,0,0,0.1);
+        }
+        >canvas{
+          object-fit: cover; object-position: center;
+        }
+        .hero-title-wrap{
+          position: absolute; width:100%; padding: 0 15%;
+          display: flex; justify-content: center; flex-direction: column;
+          >svg{
+            width:100%;
+          }
+        }
+        .hero-info-wrap{
+          width: 100%; display: flex; justify-content: center; align-items: center;
+          font-size: 38px; font-weight: bold; margin-top: 16px;
+          z-index: 10; color:white;
+          .divide-line{
+            display: block; width:2px; height: 30px; background-color: white;
+            margin:0 20px;
+          }
+        }
+      }
+      >.menu-wrap{
+        width:auto; border-radius: var(--border-radius-1); background-color: #FFD338;
+        padding: 40px; overflow: hidden;
+        .menu-img{
+          max-width:100%;
+        }
+      }
+      >.block-3-wrap{
+        position: relative; width:auto; border-radius: 24px 24px 10px 24px; 
+        overflow: hidden; cursor: pointer;
+        >.img{
+          position: absolute; width:100%; height:100%; object-fit: cover; object-position: center;
+        }
+        >.btn{
+          width: 160px; position: absolute; bottom:0; right:0; z-index: 5;
+        }
+        >.title{
+          position: absolute; width:100%; color:white; z-index: 2; padding: 0 40px;
+          >h3{
+            font-size: 40px;
+          }
+        }
+      }
+    }    
+}
+
+.section-con{
+  position: relative; width:100%; min-height: 700px; padding: 0 32px; 
+  display: grid; gap: 24px;
+  grid-template-columns: repeat(4, 4fr); grid-template-rows: repeat(2, 2fr);
+}
+.card-basic-wrap{
+  position: relative; width:100%; overflow: hidden; min-height:390px;
+  background-color: #EFF4F5; border-radius: 24px 24px 10px 24px;
+  cursor: pointer; transition: background-color 0.3s;
+  >.title-wrap{
+    width:100%; padding: 36px 44px; position: absolute; z-index: 5;
+    >h3{ font-size:36px; margin:0 0 12px 0;}
+    >.desc{ font-size:20px; margin:0; padding:0; font-weight:bold; color:var(--gray-600); line-height: 1.4em;}
+  }
+  >.btn-basic{
+    width:109px; position: absolute; right:0; bottom: 0;
+  }
+  >svg{
+    position: absolute; width:100px; height:100px;
+    left: 32px; bottom:24px; 
+    transition: all 0.5s;
+    
+  }
+  &.long{
+    grid-column: span 2;
+    >svg{
+      width:140px; height:140px;
+      left: 32px; bottom:24px; 
+      transition: all 0.5s;
+    }
+  }
+  &:hover{
+    background-color: #50FAC7;
+    >svg{
+      animation:iconRotate 4s; 
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+@keyframes iconRotate {
+  0%{ transform: rotateZ(0deg);}
+  100%{ transform: rotateZ(359deg);}
+}
+.card-blank-wrap{
+  width:100%; overflow: hidden; display: flex; 
+  justify-content: center; align-items: center;
+}
+
+.marquee-wrap{
+  width:100%; height:190px; border-top:1px solid var(--gray-300); border-bottom:1px solid var(--gray-400);
+  overflow: hidden; position: relative; margin-bottom: 48px; margin-top:10px;
+  >.track{
+    position: absolute; display: flex; gap: 80px; padding: 50px 0;
+    white-space: nowrap; opacity: 0.4;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
+  }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.section-event{
+  width:100%; margin-bottom: 120px;
+  >.inner-track{
+    display: flex; gap: 24px; padding:0 32px; 
+    .card-event{
+      position: relative; overflow: hidden; border-radius: 24px 24px 10px 24px;
+      >.banner{
+        width: 100%; height: 100%; object-fit: cover; object-position: center;
+      }
+      >.btn{
+        width:160px; position: absolute; right:0; bottom: 0;
+      }
+    }
+  }  
+}
+
+/*-------------*/
+.modal-wrap{
+  width:100vw; height:100vh; position: fixed; top:0; left:0; z-index: 99999;
+  pointer-events: none;
+  &.hidden{
+    visibility: hidden;
+  }
+  >.backdrop{
+    display: block; position: absolute; width:100%; height:100%; top:0; left:0;
+    background-color: rgba(10, 20, 30, 0.9); z-index: -1; pointer-events: all;
+    // backdrop-filter: blur(20px); 
+  }
+  >.modal-content-wrap{
+    position: absolute; width: 100%; height:100vh; padding: 70px 0; top:0; left:0;
+    display: flex; justify-content: center; align-items: center;
+    >.modal-content{
+      width:100%; height:100%; max-width: 860px; overflow: hidden; border-radius: 24px;
+      pointer-events: all; background-color: white;
+      >.modal-inner{
+        display: block; width:100%; height: 100%; position: relative; overflow-y: scroll;
+        &::-webkit-scrollbar{
+          width:0px; height:100%;
+        }
+        >img{
+          max-width: 100%;
+        }
+      }
+      
+    }
+  }
+}
